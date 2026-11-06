@@ -1,0 +1,257 @@
+/* ===== Basic setup ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== Navbar (Flexbox) ===== */
+/* Mobile first: logo and links are stacked */
+.navbar {
+  background-color: #0047ab;
+  padding: 1rem 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: white;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+/* Hover effect for links */
+.nav-links a:hover {
+  color: #ff7043;
+}
+
+/* ===== Hero section (Flexbox) ===== */
+.hero {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 5%;
+  min-height: 50vh;
+}
+
+.hero h1 {
+  font-size: 2rem;
+}
+
+.orange {
+  color: #ff7043;
+}
+
+.hero p {
+  margin-top: 1rem;
+}
+
+/* Animation for the hero text */
+.hero-text {
+  animation: slide 1.5s;
+}
+
+@keyframes slide {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.photo {
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+/* ===== Sections ===== */
+.section {
+  padding: 2rem 5%;
+}
+
+.section h2 {
+  margin-bottom: 1rem;
+}
+
+/* ===== Skills (CSS Grid) ===== */
+.skills {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.skill-box {
+  background-color: #0047ab;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.skill-box:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Projects (Flexbox) ===== */
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.project-box {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 100%;
+  height: 8rem;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.project-box:hover {
+  transform: translateY(-10px);
+}
+
+/* ===== Contact form ===== */
+.form {
+  background-color: white;
+  padding: 1rem;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.form label {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.form input,
+.form textarea {
+  padding: 0.5rem;
+  border: 1px solid #0047ab;
+  border-radius: 4px;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  background-color: #0047ab;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  margin-top: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+  background-color: #ff7043;
+  transform: scale(1.1);
+}
+
+/* ===== Footer ===== */
+.footer {
+  background-color: #0047ab;
+  color: white;
+  text-align: center;
+  padding: 0.8rem;
+  margin-top: 2rem;
+}
+
+.top-btn {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  margin-top: 0;
+}
+
+/* ===== Tablet screens (768px and above) ===== */
+@media (min-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .logo {
+    margin-bottom: 0;
+  }
+
+  .hero {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .photo {
+    width: 30vw;
+    height: 30vw;
+  }
+
+  .skills {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ===== Desktop screens (1024px and above) ===== */
+@media (min-width: 1024px) {
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+
+  .skills {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .projects {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .project-box {
+    width: 45%;
+  }
+}
